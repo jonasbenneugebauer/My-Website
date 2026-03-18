@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jonas Neugebauer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #0f0f0f;
@@ -33,17 +42,29 @@
       padding: 1.5rem 2.5rem;
       border-bottom: 1px solid var(--border);
     }
+
     .nav-name {
       font-family: 'Fraunces', serif;
       font-weight: 300;
       font-size: 1.1rem;
     }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: 0.85rem; transition: color 0.15s;
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
     }
-    .nav-links a:hover { color: var(--text); }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     main {
       max-width: 780px;
@@ -52,18 +73,40 @@
     }
 
     /* INTRO */
-    .intro { margin-bottom: 5rem; }
+    .intro {
+      margin-bottom: 5rem;
+    }
+
     .intro-tag {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
     }
+
     .dot {
-      width: 7px; height: 7px; background: var(--green);
-      border-radius: 50%; display: inline-block; animation: pulse 2s infinite;
+      width: 7px;
+      height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
     }
+
     .intro h1 {
       font-family: 'Fraunces', serif;
       font-weight: 300;
@@ -72,92 +115,229 @@
       letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
     }
-    .intro h1 em { font-style: italic; color: var(--muted); }
-    .intro p {
-      color: var(--muted); font-size: 0.95rem;
-      max-width: 520px; line-height: 1.75; margin-bottom: 2.5rem;
-    }
-    .intro p strong { color: var(--text); font-weight: 500; }
 
-    .cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .intro h1 em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .intro p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .intro-photo img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--border);
+      filter: grayscale(20%);
+    }
+
+    @media (max-width: 600px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-photo {
+        display: none;
+      }
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.6rem 1.25rem; font-size: 0.82rem;
-      font-family: 'Inter', sans-serif; border-radius: 6px;
-      text-decoration: none; transition: all 0.15s; cursor: pointer; border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.82rem;
+      font-family: 'Inter', sans-serif;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
     }
+
     .btn-primary {
-      background: var(--text); color: var(--bg);
-      border: 1px solid var(--text); font-weight: 500;
+      background: var(--text);
+      color: var(--bg);
+      border: 1px solid var(--text);
+      font-weight: 500;
     }
-    .btn-primary:hover { background: #ccc; border-color: #ccc; }
+
+    .btn-primary:hover {
+      background: #ccc;
+      border-color: #ccc;
+    }
+
     .btn-ghost {
-      background: transparent; color: var(--muted);
+      background: transparent;
+      color: var(--muted);
       border: 1px solid var(--border);
     }
-    .btn-ghost:hover { color: var(--text); border-color: #444; }
 
-    hr { border: none; border-top: 1px solid var(--border); margin: 4rem 0; }
+    .btn-ghost:hover {
+      color: var(--text);
+      border-color: #444;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 4rem 0;
+    }
 
     .section-label {
-      font-size: 0.72rem; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--muted); margin-bottom: 1.5rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
     }
 
     /* ABOUT GRID */
     .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
+
     .about-item {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 8px; padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
     }
+
     .about-item-label {
-      font-size: 0.72rem; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
     }
-    .about-item-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+
+    .about-item-value {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
 
     /* SKILLS */
-    .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
     .skill {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 5px; padding: 0.4rem 0.85rem;
-      font-size: 0.82rem; color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     /* PROJECT */
     .project-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.75rem; margin-top: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin-top: 1.5rem;
     }
+
     .project-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
     }
+
     .project-title {
-      font-family: 'Fraunces', serif; font-weight: 600;
-      font-size: 1.15rem; color: var(--text);
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--text);
     }
-    .project-year { font-size: 0.75rem; color: var(--muted); }
+
+    .project-year {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
     .project-desc {
-      color: var(--muted); font-size: 0.875rem;
-      line-height: 1.7; margin-bottom: 1.25rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
     }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
     .tag {
-      font-size: 0.72rem; color: var(--muted); background: var(--bg);
-      border: 1px solid var(--border); border-radius: 4px; padding: 0.2rem 0.6rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
     }
-    .project-links { display: flex; gap: 1rem; }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
     .project-links a {
-      font-size: 0.8rem; color: var(--muted);
-      text-decoration: none; transition: color 0.15s;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
     }
-    .project-links a:hover { color: var(--text); }
+
+    .project-links a:hover {
+      color: var(--text);
+    }
 
     /* CONTACT */
-    .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .contact-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
 
     footer {
       border-top: 1px solid var(--border);
@@ -168,130 +348,150 @@
     }
 
     @media (max-width: 600px) {
-      nav { padding: 1.2rem 1.25rem; }
-      .nav-links { display: none; }
-      main { padding: 3rem 1.25rem 6rem; }
-      .about-grid { grid-template-columns: 1fr; }
+      nav {
+        padding: 1.2rem 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 3rem 1.25rem 6rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-name">Jonas Neugebauer</div>
-  <ul class="nav-links">
-    <li><a href="#about">Über mich</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projekte</a></li>
-    <li><a href="#contact">Kontakt</a></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="nav-name">Jonas Neugebauer</div>
+    <ul class="nav-links">
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
 
-<main>
+  <main>
 
-  <div class="intro">
-    <div class="intro-tag">
-      <span class="dot"></span>
-      Offen für Werkstudentenstellen im Raum Konstanz und Umgebung
+    <div class="intro">
+      <div class="intro-tag">
+        <span class="dot"></span>
+        Offen für Werkstudentenstellen im Raum Konstanz
+      </div>
+      <div class="intro-grid">
+        <div>
+          <h1>Jonas Neugebauer<br /><em>Wirtschaftsinformatik & Webentwicklung</em></h1>
+          <p>
+            Ich studiere <strong>Wirtschaftsinformatik </strong> an der HTWG Konstanz.
+            Mein Fokus liegt auf Fullstack-Webentwicklung, von der Datenbank bis zum Frontend.
+            Ich baue Dinge die funktionieren, lerne schnell und suche eine Stelle wo ich beides einbringen kann.
+          </p>
+          <div class="cta-row">
+            <a href="mailto:jonasneugebauer.09@gmx.de" class="btn btn-primary">Kontakt aufnehmen</a>
+            <a href="https://github.com/jonasbenneugebauer" target="_blank" class="btn btn-ghost">GitHub →</a>
+          </div>
+        </div>
+        <div class="intro-photo">
+          <img src="foto.jpg" alt="Jonas Neugebauer" />
+        </div>
+      </div>
     </div>
-    <h1>Jonas Neugebauer<br/><em>Wirtschaftsinformatik & Webentwicklung</em></h1>
-    <p>
-      Ich studiere <strong>Wirtschaftsinformatik </strong> an der HTWG Konstanz.
-      Mein Fokus liegt auf Fullstack-Webentwicklung, von der Datenbank bis zum Frontend.
-     Ich lerne gerne neue Sachen, arbeite im Team und suche eine Stelle wo ich beides einbringen kann.
+
+    <hr id="about" />
+
+    <div class="section-label">Über mich</div>
+    <div class="about-grid">
+      <div class="about-item">
+        <div class="about-item-label">Studium</div>
+        <div class="about-item-value">Wirtschaftsinformatik</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-label">Hochschule</div>
+        <div class="about-item-value">HTWG Konstanz</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-label">Semester</div>
+        <div class="about-item-value">4. Semester</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-label">Standort</div>
+        <div class="about-item-value">Konstanz, BW</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-label">Gesuchte Stelle</div>
+        <div class="about-item-value">Werkstudent / Pflichtpraktikum</div>
+      </div>
+      <div class="about-item">
+        <div class="about-item-label">Sprachen</div>
+        <div class="about-item-value">Deutsch, Englisch</div>
+      </div>
+    </div>
+
+    <hr id="skills" />
+
+    <div class="section-label">Tech-Stack</div>
+    <div class="skills-list">
+      <span class="skill">Vue.js</span>
+      <span class="skill">Spring Boot</span>
+      <span class="skill">Java</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Oracle SQL</span>
+      <span class="skill">H2 Database</span>
+      <span class="skill">REST APIs</span>
+      <span class="skill">Git</span>
+      <span class="skill">HTML / CSS</span>
+    </div>
+
+    <hr id="projects" />
+
+    <div class="section-label">Projekte</div>
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-title">PuppyRacer</div>
+        <div class="project-year">2025</div>
+      </div>
+      <p class="project-desc">
+        Vollständige E-Commerce-Plattform, eigenständig entwickelt im Rahmen des Webtechnologien-Moduls an der HTWG.
+        Frontend mit Vue.js, Backend mit Spring Boot, RESTful API für Produktverwaltung und Bestellabwicklung,
+        H2-Datenbankanbindung. Deployed auf Render.com via Git.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Vue.js</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">REST API</span>
+        <span class="tag">H2 Database</span>
+        <span class="tag">Render.com</span>
+      </div>
+      <div class="project-links">
+
+      </div>
+    </div>
+
+    <hr id="contact" />
+
+    <div class="section-label">Kontakt</div>
+    <p style="color: var(--muted); font-size: 0.9rem; max-width: 480px; line-height: 1.7;">
+      Ich freue mich über Anfragen zu Werkstudentenstellen oder Praktika im Raum Konstanz.
     </p>
-    <div class="cta-row">
-      <a href="mailto:jonasneugebauer.09@gmx.de" class="btn btn-primary">Kontakt aufnehmen</a>
+    <div class="contact-links">
+      <a href="mailto:jonasneugebauer.09@gmx.de" class="btn btn-primary">jonasneugebauer.09@gmx.de</a>
+      <a href="https://www.linkedin.com/in/jonas-neugebauer-50363a3ab/" target="_blank" class="btn btn-ghost">LinkedIn
+        →</a>
       <a href="https://github.com/jonasbenneugebauer" target="_blank" class="btn btn-ghost">GitHub →</a>
     </div>
-  </div>
 
-  <hr id="about"/>
+  </main>
 
-  <div class="section-label">Über mich</div>
-  <div class="about-grid">
-    <div class="about-item">
-      <div class="about-item-label">Studium</div>
-      <div class="about-item-value">Wirtschaftsinformatik</div>
-    </div>
-    <div class="about-item">
-      <div class="about-item-label">Hochschule</div>
-      <div class="about-item-value">HTWG Konstanz</div>
-    </div>
-    <div class="about-item">
-      <div class="about-item-label">Semester</div>
-      <div class="about-item-value">4. Semester</div>
-    </div>
-    <div class="about-item">
-      <div class="about-item-label">Standort</div>
-      <div class="about-item-value">Konstanz, BW</div>
-    </div>
-    <div class="about-item">
-      <div class="about-item-label">Gesuchte Stelle</div>
-      <div class="about-item-value">Werkstudent / Pflichtpraktikum</div>
-    </div>
-    <div class="about-item">
-      <div class="about-item-label">Sprachen</div>
-      <div class="about-item-value">Deutsch, Englisch</div>
-    </div>
-  </div>
-
-  <hr id="skills"/>
-
-  <div class="section-label">Tech-Stack</div>
-  <div class="skills-list">
-    <span class="skill">Vue.js</span>
-    <span class="skill">Spring Boot</span>
-    <span class="skill">Java</span>
-    <span class="skill">JavaScript</span>
-    <span class="skill">Oracle SQL</span>
-    <span class="skill">H2 Database</span>
-    <span class="skill">REST APIs</span>
-    <span class="skill">Git</span>
-    <span class="skill">HTML / CSS</span>
-  </div>
-
-  <hr id="projects"/>
-
-  <div class="section-label">Projekte</div>
-  <div class="project-card">
-    <div class="project-header">
-      <div class="project-title">PuppyRacer</div>
-      <div class="project-year">2025</div>
-    </div>
-    <p class="project-desc">
-      Vollständige E-Commerce-Plattform, eigenständig entwickelt im Rahmen des Webtechnologien-Moduls an der HTWG.
-      Frontend mit Vue.js, Backend mit Spring Boot, RESTful API für Produktverwaltung und Bestellabwicklung,
-      H2-Datenbankanbindung. Deployed auf Render.com via Git.
-    </p>
-    <div class="project-tags">
-      <span class="tag">Vue.js</span>
-      <span class="tag">Spring Boot</span>
-      <span class="tag">REST API</span>
-      <span class="tag">H2 Database</span>
-      <span class="tag">Render.com</span>
-    </div>
-    <div class="project-links">
-      <a href="#">Frontend auf GitHub →</a>
-      <a href="#">Backend auf GitHub →</a>
-    </div>
-  </div>
-
-  <hr id="contact"/>
-
-  <div class="section-label">Kontakt</div>
-  <p style="color: var(--muted); font-size: 0.9rem; max-width: 480px; line-height: 1.7;">
-    Ich freue mich über Anfragen zu Werkstudentenstellen oder Praktika im Raum Konstanz.
-  </p>
-  <div class="contact-links">
-    <a href="mailto:jonasneugebauer.09@gmx.de" class="btn btn-primary">jonasneugebauer.09@gmx.de</a>
-    <a href="https://www.linkedin.com/in/jonas-neugebauer-50363a3ab/" target="_blank" class="btn btn-ghost">LinkedIn →</a>
-    <a href="https://github.com/jonasbenneugebauer" target="_blank" class="btn btn-ghost">GitHub →</a>
-  </div>
-
-</main>
-
-<footer>© 2026 Jonas Neugebauer</footer>
+  <footer>© 2026 Jonas Neugebauer</footer>
 
 </body>
+
 </html>
